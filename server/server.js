@@ -2,13 +2,14 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import path from "path";
 
 //express 
 import connectDB from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js";
 import testAiRoute from './routes/testRoute.js';
-
-
+import typeRouter from "./routes/eventTypeRoutes.js";
+import eventRouter from "./routes/eventRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -24,11 +25,16 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
+const __dirname = path.resolve();
+
+// Serve static files from the 'assets/images' directory
+app.use('/assets/images', express.static(path.join(__dirname, 'assets/images')))
+
 // Routes
 app.use("/api/auth", authRouter);
 app.use('/api', testAiRoute);
-app.use('/images', express.static('assets/images'));
-
+app.use('/api/event-type',typeRouter);
+app.use('/api/events',eventRouter);
 
 app.get("/", (req, res) => {
   res.send("PlanPerfext API is running...");

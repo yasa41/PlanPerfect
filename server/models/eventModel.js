@@ -8,10 +8,12 @@ const eventSchema = new mongoose.Schema({
   organizerId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   status: { type: String, trim: true, default: 'planned' },
   currentStage: { type: String, trim: true, default: 'initial' },
-  eventType: { type: String, required: true }
-
+  eventType: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "EventType",
+  required: true,
+}
 }, { timestamps: true });
 
 const Event = mongoose.models.Event || mongoose.model('Event', eventSchema);
 export default Event;
-s

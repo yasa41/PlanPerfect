@@ -16,6 +16,13 @@ image: { type: String, required: true } ,
       name: { type: String, required: true },
       content: { type: String, required: true } 
     }
+  ],
+   defaultVendors: [
+    {
+      category: { type: String, required: true },  // e.g. "Decoration", "Catering"
+      name: { type: String, required: true },      // Vendor name
+      estimate: { type: Number, required: true }   // Estimated price
+    }
   ]
 });
 

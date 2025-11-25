@@ -4,7 +4,7 @@ import {
   getEventById, 
   addWorkingEvent, 
   removeWorkingEvent,
-  getWorkingEvents 
+  getWorkingEvents,createEvent
 } from '../controllers/eventControllers.js';
 import { verifyToken } from '../middleware/auth.js';
 
@@ -16,5 +16,5 @@ router.get('/:id', verifyToken, getEventById);          // Get event by id
 router.get('/working/list', verifyToken, getWorkingEvents);       // Get user’s working events
 router.post('/working/add', verifyToken, addWorkingEvent);        // Add event to workingEvents
 router.post('/working/remove', verifyToken, removeWorkingEvent);  // Remove event from workingEvents
-
+router.post('/create',verifyToken,createEvent);
 export default router;
