@@ -45,8 +45,8 @@ export default function Login() {
               required
               className="w-full p-4 mb-5 rounded-[10px] border border-taupe outline-none text-lg bg-offwhite text-brown"
             />
-            <div className="text-right mb-5">
-              <a href="#" className="text-gold text-base hover:underline">Forgot password?</a>
+            <div className="text-left mb-5">
+              <a href="#" className="text-gold  text-base hover:underline">Forgot password?</a>
             </div>
             <button
               type="submit"
@@ -54,12 +54,7 @@ export default function Login() {
             >
               SIGN IN
             </button>
-            <div className="flex items-center my-6 text-taupe w-full">
-              <hr className="flex-1 border-t border-taupe" />
-              <span className="mx-4 text-lg">or</span>
-              <hr className="flex-1 border-t border-taupe" />
-            </div>
-          
+            
             <div className="text-center text-base text-taupe">
               Are you new?{" "}
               <a href="#" className="text-gold underline hover:text-brown">

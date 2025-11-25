@@ -1,13 +1,21 @@
 import { Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/Landing";
 import Login from "./pages/LoginPage";
-import "./App.css";
+import SignIn from "./pages/RegisterPage";
+import ForgotPassword from "./pages/ForgotPassword";
+import LandingPage from "./pages/LandingPage";
+import EventPage from "./pages/EventPage";
+import InvitationGenerator from "./pages/GenerateInvite";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<LandingPage />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<SignIn/>}/>
+       <Route path="/landing" element={<LandingPage/>}/>
+        <Route path="/event" element={<EventPage/>}/>
+              <Route path="/invite" element={<InvitationGenerator/>}/>
+  
     </Routes>
   );
 }
