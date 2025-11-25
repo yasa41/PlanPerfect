@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 //express 
 import connectDB from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js";
+import testAiRoute from './routes/testRoute.js';
 
 
 dotenv.config();
@@ -25,6 +26,7 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api/auth", authRouter);
+app.use('/api', testAiRoute);
 
 
 app.get("/", (req, res) => {
