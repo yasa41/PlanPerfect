@@ -1,7 +1,11 @@
 import React from "react";
 import bgImage from '/bg4.avif';
+import { useRegister } from "../hooks/useRegister"; // Adjust path as needed
+import { Link } from "react-router-dom";
 
 export default function SignIn() {
+  const { name, setName, email, setEmail, password, setPassword, error, handleSubmit } = useRegister();
+
   return (
     <div
       className="min-h-screen w-full flex items-center justify-center relative overflow-hidden"
@@ -30,13 +34,15 @@ export default function SignIn() {
         </div>
         {/* Right section */}
         <div className="flex-1 px-12 py-16 flex flex-col justify-center items-center my-16 mr-16">
-          <form className="w-full">
+          <form className="w-full" onSubmit={handleSubmit}>
             <label className="font-semibold mb-2 block text-taupe">Username</label>
             <input
               type="text"
               placeholder="Enter your username"
               required
               className="w-full p-4 mb-5 rounded-[10px] border border-taupe outline-none text-lg bg-offwhite text-brown"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
             <label className="font-semibold mb-2 block text-taupe">Email</label>
             <input
@@ -44,6 +50,8 @@ export default function SignIn() {
               placeholder="Enter your email"
               required
               className="w-full p-4 mb-5 rounded-[10px] border border-taupe outline-none text-lg bg-offwhite text-brown"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label className="font-semibold mb-2 block text-taupe">Password</label>
             <input
@@ -51,22 +59,24 @@ export default function SignIn() {
               placeholder="************"
               required
               className="w-full p-4 mb-5 rounded-[10px] border border-taupe outline-none text-lg bg-offwhite text-brown"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
+            {error && <p className="text-red-500 mb-5">{error}</p>}
             <div className="text-left mb-5">
-              <a href="#" className="text-gold text-base hover:underline">Forgot password?</a>
+              <Link to="/forgot-password" className="text-gold text-base hover:underline">Forgot password?</Link>
             </div>
             <button
               type="submit"
               className="w-full py-4 bg-brown text-offwhite font-bold text-xl rounded-[10px] cursor-pointer mb-6 hover:bg-taupe transition"
             >
-              SIGN IN
+              SIGN UP
             </button>
-            
             <div className="text-center text-base text-taupe">
               Already have an account?{" "}
-              <a href="#" className="text-gold underline hover:text-brown">
+              <Link to="/login" className="text-gold underline hover:text-brown">
                 Log in
-              </a>
+              </Link>
             </div>
           </form>
         </div>

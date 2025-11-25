@@ -27,6 +27,7 @@ app.use(cookieParser());
 // Routes
 app.use("/api/auth", authRouter);
 app.use('/api', testAiRoute);
+app.use('/images', express.static('assets/images'));
 
 
 app.get("/", (req, res) => {

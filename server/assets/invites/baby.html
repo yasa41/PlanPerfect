@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Baby Shower Invitation</title>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* 🌸 Replace bg.jpg with your local image inside your folder */
+      --bg: url('https://i.pinimg.com/736x/4b/03/19/4b03196ebfa6d446a49af6cd66e5b1ae.jpg');
+      
+      --card-bg: rgba(255,240,245,0.82); /* Soft pink glass look */
+      --accent: #d68fa4;   /* Soft rose for date */
+      --text: #4a3b3b;
+      --max-width: 720px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      font-family: 'Poppins', system-ui;
+      color:var(--text);
+
+      /* Responsive background image */
+      background-image: var(--bg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    .invite-card{
+      width:100%;
+      max-width:var(--max-width);
+      background: var(--card-bg);
+      border-radius:20px;
+      padding:48px 40px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+      backdrop-filter: blur(6px);
+      text-align:center;
+    }
+
+    /* title label */
+    .label{
+      font-family:'Playfair Display', serif;
+      letter-spacing:3px;
+      font-weight:700;
+      font-size:22px;
+      color:#b76e79;
+    }
+    .subscript{
+      display:block;
+      font-family:'Poppins';
+      font-style:italic;
+      color:#b56d7d;
+      font-size:16px;
+      margin-top:-4px;
+    }
+
+    h1.title{
+      font-family:'Playfair Display', serif;
+      font-weight:700;
+      margin:22px 0 8px 0;
+      font-size:32px;
+      color:#b76e79;
+      letter-spacing:3px;
+    }
+
+    p.subtitle{
+      margin:0 0 24px 0;
+      font-size:18px;
+      letter-spacing:4px;
+      color:#b76e79;
+    }
+
+    /* date block */
+    .date-wrap{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+      margin:20px 0;
+    }
+
+    .date-item{ font-family:'Playfair Display', serif; }
+    .date-item .day{
+      font-size:48px;
+      color:var(--accent);
+      font-weight:700;
+      margin:0 8px;
+    }
+    .date-item small{ display:block; font-size:14px; letter-spacing:1px; }
+
+    .divider{
+      height:2px;
+      width:80px;
+      background:rgba(0,0,0,0.1);
+      border-radius:2px;
+    }
+
+    .year{ 
+      margin-top:4px; 
+      font-size:16px; 
+      letter-spacing:2px; 
+      color:#b76e79;
+      font-weight:600;
+    }
+
+    /* venue */
+    .venue{
+      margin-top:26px;
+      font-weight:600;
+      font-size:18px;
+      color:#914f5c;
+    }
+    .address{
+      margin-top:6px;
+      font-size:14px;
+      color:#5b4a4a;
+      line-height:1.5;
+    }
+
+    .footer-note{
+      margin-top:30px;
+      font-size:12px;
+      color:#7d6a6a;
+      letter-spacing:1px;
+    }
+
+    /* responsive tweaks */
+    @media (max-width:520px){
+      .invite-card{ padding:28px 20px; }
+      h1.title{ font-size:24px; }
+      .date-item .day{ font-size:36px; }
+      .label{ font-size:18px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <article class="invite-card" aria-label="Baby Shower Invitation">
+    <div class="label">YOU'RE INVITED<span class="subscript">to a</span></div>
+
+    <h1 class="title">BABY SHOWER</h1>
+
+    <p class="subtitle">CELEBRATING MOM-TO-BE</p>
+
+    <div class="date-wrap">
+      <div class="date-item">
+        <small>SATURDAY</small>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="date-item">
+        <div class="day">14</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="date-item">
+        <small>3 PM – 6 PM</small>
+      </div>
+    </div>
+
+    <div class="year">2025</div>
+
+    <div class="venue">THE BLOSSOM HALL</div>
+    <div class="address">22 ROYAL GARDEN ROAD<br>GREEN VALLEY, INDIA</div>
+
+    <div class="footer-note">We can’t wait to celebrate with you 💕</div>
+  </article>
+
+</body>
+</html>
